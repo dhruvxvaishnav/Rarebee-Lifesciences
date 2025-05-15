@@ -77,7 +77,7 @@ const AboutUs = () => {
             </div>
             <div className="order-2">
               <div className="space-y-6">
-                <p className="text-lg text-[#9AA6B2] leading-relaxed">
+                <p className="text-lg text-[black] leading-relaxed">
                   RareBee Lifesciences is a PCD Pharma company based in
                   Ahmedabad, Gujarat. We have a clear vision of becoming a
                   recognized name in the pharmaceutical field within a short
@@ -87,7 +87,7 @@ const AboutUs = () => {
                   society by making a wide range of pharmaceutical drugs
                   accessible to people across the globe.
                 </p>
-                <p className="text-lg text-[#9AA6B2] leading-relaxed">
+                <p className="text-lg text-[black] leading-relaxed">
                   We offer formulations in various forms including tablets,
                   capsules, injectables, oral suspensions, syrups, and powders
                   for internal use, as well as creams, lotions, ointments, and

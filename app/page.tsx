@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import About from "@/components/About";
-import Features from "@/components/Features";
+import Products from "@/components/Products";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        {/* <Features /> */}
+        <Products />
       </main>
       <Footer />
     </>

@@ -22,6 +22,14 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const scrollToAbout = (e: any) => {
+    e.preventDefault();
+    const aboutSection = document.getElementById("about");
+    if (aboutSection) {
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
       id="home"
@@ -43,11 +51,11 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-[#9AA6B2] mb-8">
             Innovating Healthcare, Transforming Lives
           </p>
-          <Link href="#about">
+          <a href="#about" onClick={scrollToAbout}>
             <button className="bg-[#BCCCDC] text-gray-800 px-8 py-3 rounded-lg hover:bg-[#9AA6B2] transition-colors duration-200">
               Know Us More
             </button>
-          </Link>
+          </a>
         </div>
       </div>
     </section>
