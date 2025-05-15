@@ -1,22 +1,53 @@
-import React from "react";
+"use client";
+
+import React, { useEffect, useState } from "react";
+import Link from "next/link";
 
 const Hero = () => {
+  const [displayText, setDisplayText] = useState("");
+  const fullText = "Rarebee LifeSciences";
+
+  useEffect(() => {
+    let currentIndex = 0;
+
+    const interval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setDisplayText(fullText.slice(0, currentIndex));
+        currentIndex++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 80); // Faster interval for smoothness
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <section className="min-h-screen flex items-center justify-center bg-rarebee-primary px-4 pt-20">
-      <div className="container mx-auto">
+    <section
+      id="home"
+      className="min-h-screen flex items-center justify-center bg-[#F8FAFC] px-4 pt-20 relative overflow-hidden"
+    >
+      {/* Background Video will be added here */}
+      {/* <video 
+        className="absolute inset-0 object-cover w-full h-full z-0"
+        autoPlay
+        muted
+        loop
+      /> */}
+
+      <div className="container mx-auto z-10 relative">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-6">
-            Innovating Healthcare,
-            <br />
-            Transforming Lives
+            {displayText}
           </h1>
-          <p className="text-lg md:text-xl text-rarebee-text mb-8">
-            Rarebee LifeSciences is pioneering the future of pharmaceutical
-            innovation through cutting-edge research and development.
+          <p className="text-lg md:text-xl text-[#9AA6B2] mb-8">
+            Innovating Healthcare, Transforming Lives
           </p>
-          <button className="bg-gray-800 text-white px-8 py-3 rounded-lg hover:bg-gray-700 transition-colors duration-200">
-            Learn More
-          </button>
+          <Link href="#about">
+            <button className="bg-[#BCCCDC] text-gray-800 px-8 py-3 rounded-lg hover:bg-[#9AA6B2] transition-colors duration-200">
+              Know Us More
+            </button>
+          </Link>
         </div>
       </div>
     </section>

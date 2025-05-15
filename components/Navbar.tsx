@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,14 @@ const Navbar = () => {
     { name: "Contact Us", href: "#contactus" },
   ];
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId.replace("#", ""));
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+    setIsOpen(false);
+  };
+
   return (
     <>
       {/* NAVBAR */}
@@ -23,7 +32,7 @@ const Navbar = () => {
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <Image
-              src="/logo-1.png"
+              src="/Logo.png"
               alt="Logo"
               width={150}
               height={25}
@@ -37,6 +46,10 @@ const Navbar = () => {
                 <a
                   key={item.name}
                   href={item.href}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
                   className="px-3 py-2 rounded-lg font-medium text-[#9AA6B2] hover:text-black hover:bg-[#9AA6B2]/20 transition"
                 >
                   {item.name}
@@ -84,7 +97,10 @@ const Navbar = () => {
             <a
               key={item.name}
               href={item.href}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection(item.href);
+              }}
               className="block text-white font-medium py-3 px-4 rounded-lg hover:bg-white/20 transition"
             >
               {item.name}
