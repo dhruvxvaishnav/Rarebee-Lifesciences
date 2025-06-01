@@ -1,11 +1,16 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Check, IndianRupee, Medal, Globe2 } from "lucide-react";
 
 const AboutUs = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [aboutVisible, setAboutVisible] = useState(false);
+  const [featuresVisible, setFeaturesVisible] = useState(false);
+
+  const aboutRef = useRef(null);
+  const featuresRef = useRef(null);
 
   const features = [
     {
@@ -42,21 +47,56 @@ const AboutUs = () => {
     },
   ];
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === aboutRef.current && entry.isIntersecting) {
+            setAboutVisible(true);
+          }
+          if (entry.target === featuresRef.current && entry.isIntersecting) {
+            setFeaturesVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (aboutRef.current) observer.observe(aboutRef.current);
+    if (featuresRef.current) observer.observe(featuresRef.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <>
       {/* About Section */}
       <section
         id="about"
         className="min-h-screen pt-32 pb-24 md:pt-28 md:pb-28 px-4 bg-white"
+        ref={aboutRef}
       >
         <div className="container mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+            <h2
+              className={`text-4xl md:text-5xl font-bold text-gray-800 transform transition-all duration-700 ease-out ${
+                aboutVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
+            >
               About Rarebee LifeSciences
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-1">
+            <div
+              className={`order-1 transform transition-all duration-700 ease-out ${
+                aboutVisible
+                  ? "translate-x-0 opacity-100"
+                  : "-translate-x-16 opacity-0"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+            >
               <div
                 className="relative overflow-hidden rounded-xl shadow-xl"
                 onMouseEnter={() => setIsHovered(true)}
@@ -75,7 +115,14 @@ const AboutUs = () => {
                 />
               </div>
             </div>
-            <div className="order-2">
+            <div
+              className={`order-2 transform transition-all duration-700 ease-out ${
+                aboutVisible
+                  ? "translate-x-0 opacity-100"
+                  : "translate-x-16 opacity-0"
+              }`}
+              style={{ transitionDelay: "400ms" }}
+            >
               <div className="space-y-6">
                 <p className="text-lg text-[black] leading-relaxed">
                   RareBee Lifesciences is a PCD Pharma company based in
@@ -108,13 +155,27 @@ const AboutUs = () => {
       <section
         id="features"
         className="min-h-screen py-16 md:py-24 px-4 bg-white"
+        ref={featuresRef}
       >
         <div className="container mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            <h2
+              className={`text-3xl md:text-4xl font-bold text-gray-800 mb-4 transform transition-all duration-700 ease-out ${
+                featuresVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
+            >
               Why Choose Rarebee
             </h2>
-            <p className="text-lg text-[#9AA6B2] max-w-3xl mx-auto">
+            <p
+              className={`text-lg text-[#9AA6B2] max-w-3xl mx-auto transform transition-all duration-700 ease-out ${
+                featuresVisible
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-8 opacity-0"
+              }`}
+              style={{ transitionDelay: "200ms" }}
+            >
               At Rarebee LifeSciences, we combine innovation with excellence to
               deliver pharmaceutical solutions that make a difference.
             </p>
@@ -123,7 +184,14 @@ const AboutUs = () => {
             {features.map((feature, index) => (
               <div
                 key={index}
-                className={`${feature.color} border-2 ${feature.borderColor} rounded-xl p-6 shadow-md transition-all duration-300 hover:shadow-lg hover:translate-y-[-5px] sticky top-24 sm:static`}
+                className={`${feature.color} border-2 ${
+                  feature.borderColor
+                } rounded-xl p-6 shadow-md transition-all duration-700 hover:shadow-lg hover:translate-y-[-5px] sticky top-24 sm:static transform ${
+                  featuresVisible
+                    ? "translate-y-0 opacity-100"
+                    : "translate-y-12 opacity-0"
+                }`}
+                style={{ transitionDelay: `${400 + index * 150}ms` }}
               >
                 <div className="flex justify-center mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">

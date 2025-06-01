@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const navItems = [
     { name: "Home", href: "#home" },
@@ -16,6 +17,12 @@ const Navbar = () => {
     { name: "Partner with Us", href: "#partner" },
     { name: "Contact Us", href: "#contactus" },
   ];
+
+  // Trigger slide-down animation on mount
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.replace("#", ""));
@@ -28,7 +35,11 @@ const Navbar = () => {
   return (
     <>
       {/* NAVBAR */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-[#F8FAFC] shadow-lg">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 bg-[#F8FAFC] shadow-lg transform transition-transform duration-700 ease-out ${
+          isVisible ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center h-20">
             <Image
@@ -42,7 +53,7 @@ const Navbar = () => {
 
             {/* Desktop links */}
             <div className="hidden md:flex space-x-6">
-              {navItems.map((item) => (
+              {navItems.map((item, index) => (
                 <a
                   key={item.name}
                   href={item.href}
@@ -50,7 +61,12 @@ const Navbar = () => {
                     e.preventDefault();
                     scrollToSection(item.href);
                   }}
-                  className="px-3 py-2 rounded-lg font-medium text-[#9AA6B2] hover:text-black hover:bg-[#9AA6B2]/20 transition"
+                  className={`px-3 py-2 rounded-lg font-medium text-[#9AA6B2] hover:text-black hover:bg-[#9AA6B2]/20 transition-all duration-300 transform ${
+                    isVisible
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-4 opacity-0"
+                  }`}
+                  style={{ transitionDelay: `${index * 50}ms` }}
                 >
                   {item.name}
                 </a>
@@ -59,7 +75,7 @@ const Navbar = () => {
 
             {/* Mobile menu button */}
             <button
-              className="md:hidden text-[#9AA6B2] hover:text-[#0F172A] transition"
+              className="md:hidden text-[#9AA6B2] hover:text-[#9AA6B2] transition"
               onClick={() => setIsOpen(true)}
             >
               <Menu size={28} />

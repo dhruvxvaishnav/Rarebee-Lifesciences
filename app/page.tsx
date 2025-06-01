@@ -5,6 +5,7 @@ import About from "@/components/About";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";
 import ThirdParty from "@/components/ThirdParty";
+import Partner from "@/components/Partner";
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <About />
         <Products />
         <ThirdParty />
+        <Partner />
         <Contact />
       </main>
       <Footer />

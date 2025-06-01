@@ -1,22 +1,55 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const ThirdParty = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold: 0.2 }
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section
       id="thirdparty"
-      className="min-h-screen pt-32 pb-24 md:pt-32 md:pb-32 px-4 bg-white"
+      className="min-h-screen pt-32 pb-24 md:pt-40 md:pb-32 px-4 bg-white"
+      ref={sectionRef}
     >
       <div className="container mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800">
+          <h2
+            className={`text-4xl md:text-5xl font-bold text-gray-800 transform transition-all duration-700 ease-out ${
+              isVisible
+                ? "translate-y-0 opacity-100 scale-100"
+                : "translate-y-8 opacity-0 scale-95"
+            }`}
+          >
             Our Third Party Manufacturing Services
           </h2>
         </div>
 
-        <div className="max-w-4xl mx-auto text-center">
+        <div
+          className={`max-w-4xl mx-auto text-center transform transition-all duration-700 ease-out ${
+            isVisible
+              ? "translate-y-0 opacity-100 scale-100"
+              : "translate-y-12 opacity-0 scale-95"
+          }`}
+          style={{ transitionDelay: "200ms" }}
+        >
           <div className="space-y-6">
             <p className="text-lg text-[black] leading-relaxed">
               RareBee Lifesciences offers comprehensive third-party
@@ -42,9 +75,16 @@ const ThirdParty = () => {
             </p>
           </div>
 
-          <div className="mt-12">
+          <div
+            className={`mt-12 transform transition-all duration-500 ease-out ${
+              isVisible
+                ? "translate-y-0 opacity-100 scale-100"
+                : "translate-y-8 opacity-0 scale-90"
+            }`}
+            style={{ transitionDelay: "600ms" }}
+          >
             <Link href="/third-party">
-              <button className="bg-[#BCCCDC] text-gray-800 px-8 py-3 rounded-lg hover:bg-[#9AA6B2] transition-colors duration-200">
+              <button className="bg-[#BCCCDC] text-gray-800 px-8 py-3 rounded-lg hover:bg-[#9AA6B2] hover:scale-110 transition-all duration-300 animate-bounce hover:animate-bounce">
                 Know More
               </button>
             </Link>
