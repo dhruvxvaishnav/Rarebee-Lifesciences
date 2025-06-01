@@ -46,8 +46,8 @@ const Navbar = () => {
               src="/Logo.png"
               alt="Logo"
               width={150}
-              height={25}
-              className="h-auto w-[120px] sm:w-[150px] transition-transform duration-200 hover:scale-105"
+              height={10}
+              className="transition-transform duration-200 hover:scale-105"
               priority
             />
 

@@ -4,8 +4,8 @@ import Footer from "@/components/Footer";
 import About from "@/components/About";
 import Products from "@/components/Products";
 import Contact from "@/components/Contact";
-import ThirdParty from "@/components/ThirdParty";
 import Partner from "@/components/Partner";
+import ThirdParty from "@/components/ThirdParty";
 
 export default function Home() {
   return (

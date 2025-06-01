@@ -52,13 +52,10 @@ const Products = () => {
             }`}
             style={{ transitionDelay: "200ms" }}
           >
-            <div className="space-y-6">
-              <p className="text-lg text-[black] leading-relaxed">
+            <div className="space-y-6 ">
+              <p className="text-lg text-[black] leading-relaxed text-center">
                 At RareBee Lifesciences, our unwavering commitment to quality
-                drives excellence across every aspect of our operations. This
-                dedication is reflected not only in our consistent growth but
-                also in the personal development of our team and the strength of
-                our management practices.
+                drives excellence across every aspect of our operations.
                 <br />
                 Every pharmaceutical product we offer undergoes a rigorous,
                 multi-step Quality Assurance process before reaching our
@@ -85,7 +82,7 @@ const Products = () => {
                 }`}
                 style={{ transitionDelay: "600ms" }}
               >
-                <Link href="/products" className="inline-block">
+                <Link href="/products" className=" items-center">
                   <button className="bg-[#BCCCDC] text-gray-800 px-6 py-3 rounded-lg hover:bg-[#9AA6B2] hover:scale-105 transition-all duration-200 w-full sm:w-auto">
                     View All Products
                   </button>

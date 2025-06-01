@@ -93,7 +93,7 @@ const Contact = () => {
   return (
     <section
       id="contactus"
-      className="py-20 md:py-28 px-4 bg-[#F8FAFC]"
+      className="py-16 md:py-24 lg:py-32 px-4 bg-[#F8FAFC]"
       ref={sectionRef}
     >
       <div className="container mx-auto max-w-4xl">

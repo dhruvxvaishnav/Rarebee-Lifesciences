@@ -64,7 +64,7 @@ const Partner = () => {
       {/* Partner Cards Section */}
       <section
         id="partner"
-        className="min-h-screen py-16 md:py-24 px-4 bg-[#F8FAFC]"
+        className="min-h-screen pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 px-4 bg-[#F8FAFC]"
         ref={sectionRef}
       >
         <div className="container mx-auto">

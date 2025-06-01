@@ -73,7 +73,7 @@ const AboutUs = () => {
       {/* About Section */}
       <section
         id="about"
-        className="min-h-screen pt-32 pb-24 md:pt-28 md:pb-28 px-4 bg-white"
+        className="min-h-screen pt-24 md:pt-32 lg:pt-40 pb-16 md:pb-24 lg:pb-32 px-4 bg-white"
         ref={aboutRef}
       >
         <div className="container mx-auto">
