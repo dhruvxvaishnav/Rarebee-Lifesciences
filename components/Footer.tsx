@@ -44,7 +44,7 @@ const Footer = () => {
             <h3 className="text-lg font-bold text-gray-800 mb-4">
               Rarebee LifeSciences
             </h3>
-            <p className="text-[#9AA6B2]">
+            <p className="text-[black]">
               Next generation pharmaceutical company focused on innovative
               healthcare solutions.
             </p>
@@ -66,7 +66,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#about"
-                  className="text-[#9AA6B2] hover:text-gray-800 transition-colors duration-200"
+                  className="text-[black] hover:text-gray-800 transition-colors duration-200"
                 >
                   About Us
                 </a>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#products"
-                  className="text-[#9AA6B2] hover:text-gray-800 transition-colors duration-200"
+                  className="text-[black] hover:text-gray-800 transition-colors duration-200"
                 >
                   Products
                 </a>
@@ -82,7 +82,7 @@ const Footer = () => {
               <li>
                 <a
                   href="#contactus"
-                  className="text-[#9AA6B2] hover:text-gray-800 transition-colors duration-200"
+                  className="text-[black] hover:text-gray-800 transition-colors duration-200"
                 >
                   Contact
                 </a>
@@ -100,10 +100,13 @@ const Footer = () => {
             style={{ transitionDelay: "600ms" }}
           >
             <h4 className="text-lg font-bold text-gray-800 mb-4">Contact</h4>
-            <ul className="space-y-2 text-[#9AA6B2]">
-              <li>Email: info@rarebee.com</li>
-              <li>Phone: +1 (555) 123-4567</li>
-              <li>Address: 123 Pharma Street, CA 94000</li>
+            <ul className="space-y-2 text-[black]">
+              <li>Email: rarebeelifesciences@yahoo.com</li>
+              <li>Phone: +91 98985-55847 / 7574091870s </li>
+              <li>
+                Address: E-404, Ganesh Glory 11, Jagatpur Road, Ahmedabad -
+                382481 (Gujarat)
+              </li>
             </ul>
           </div>
         </div>
@@ -115,7 +118,7 @@ const Footer = () => {
           }`}
           style={{ transitionDelay: "800ms" }}
         >
-          <p className="text-[#9AA6B2]">
+          <p className="text-[black]">
             &copy; {currentYear} Rarebee LifeSciences. All rights reserved.
           </p>
         </div>

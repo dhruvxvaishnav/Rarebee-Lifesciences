@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-montserrat)", "sans-serif"],
+      },
       colors: {
         rarebee: {
           bg: "#F8FAFC",
