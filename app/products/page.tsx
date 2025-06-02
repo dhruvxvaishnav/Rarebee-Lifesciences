@@ -580,16 +580,13 @@ Menthol Gel 0.5 % w/w`,
                     <table className="w-full">
                       <thead className="bg-[#D9EAFD] border-b border-[#BCCCDC]">
                         <tr>
-                          <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800 border-r border-[#BCCCDC]">
-                            Sr No.
-                          </th>
-                          <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800 border-r border-[#BCCCDC]">
+                          <th className="px-2 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-800 border-r border-[#BCCCDC] w-1/4">
                             Brand Name
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800 border-r border-[#BCCCDC]">
+                          <th className="px-2 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-800 border-r border-[#BCCCDC] w-1/2">
                             Composition
                           </th>
-                          <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                          <th className="px-2 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-800 w-1/4">
                             Type
                           </th>
                         </tr>
@@ -602,19 +599,18 @@ Menthol Gel 0.5 % w/w`,
                               index % 2 === 0 ? "bg-white" : "bg-gray-50"
                             } border-b border-[#BCCCDC]`}
                           >
-                            <td className="px-4 py-3 text-sm text-gray-800 border-r border-[#BCCCDC] font-medium">
-                              {product.sr}
-                            </td>
-                            <td className="px-4 py-3 text-sm text-gray-800 border-r border-[#BCCCDC] font-medium">
+                            <td className="px-2 sm:px-4 py-3 text-xs sm:text-sm text-gray-800 border-r border-[#BCCCDC] font-medium">
                               {product.brandName}
                             </td>
-                            <td className="px-4 py-3 text-sm text-gray-700 border-r border-[#BCCCDC]">
+                            <td className="px-2 sm:px-4 py-3 text-xs sm:text-sm text-gray-700 border-r border-[#BCCCDC] break-words">
                               {product.composition}
                             </td>
-                            <td className="px-4 py-3 text-sm text-gray-700">
+                            <td className="px-2 sm:px-4 py-3 text-xs sm:text-sm text-gray-700">
                               <div className="flex items-center">
                                 {getTypeIcon(product.type)}
-                                <span className="ml-2">{product.type}</span>
+                                <span className="ml-1 sm:ml-2">
+                                  {product.type}
+                                </span>
                               </div>
                             </td>
                           </tr>
@@ -633,16 +629,13 @@ Menthol Gel 0.5 % w/w`,
               <table className="w-full">
                 <thead className="bg-[#D9EAFD] border-b border-[#BCCCDC]">
                   <tr>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800 border-r border-[#BCCCDC]">
-                      Sr No.
-                    </th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800 border-r border-[#BCCCDC]">
+                    <th className="px-2 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-800 border-r border-[#BCCCDC] w-1/4">
                       Brand Name
                     </th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800 border-r border-[#BCCCDC]">
+                    <th className="px-2 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-800 border-r border-[#BCCCDC] w-1/2">
                       Composition
                     </th>
-                    <th className="px-4 py-3 text-left text-sm font-semibold text-gray-800">
+                    <th className="px-2 sm:px-4 py-3 text-left text-xs sm:text-sm font-semibold text-gray-800 w-1/4">
                       Type
                     </th>
                   </tr>
@@ -655,19 +648,16 @@ Menthol Gel 0.5 % w/w`,
                         index % 2 === 0 ? "bg-white" : "bg-gray-50"
                       } border-b border-[#BCCCDC]`}
                     >
-                      <td className="px-4 py-3 text-sm text-gray-800 border-r border-[#BCCCDC] font-medium">
-                        {product.sr}
-                      </td>
-                      <td className="px-4 py-3 text-sm text-gray-800 border-r border-[#BCCCDC] font-medium">
+                      <td className="px-2 sm:px-4 py-3 text-xs sm:text-sm text-gray-800 border-r border-[#BCCCDC] font-medium">
                         {product.brandName}
                       </td>
-                      <td className="px-4 py-3 text-sm text-gray-700 border-r border-[#BCCCDC]">
+                      <td className="px-2 sm:px-4 py-3 text-xs sm:text-sm text-gray-700 border-r border-[#BCCCDC] break-words">
                         {product.composition}
                       </td>
-                      <td className="px-4 py-3 text-sm text-gray-700">
+                      <td className="px-2 sm:px-4 py-3 text-xs sm:text-sm text-gray-700">
                         <div className="flex items-center">
                           {getTypeIcon(product.type)}
-                          <span className="ml-2">{product.type}</span>
+                          <span className="ml-1 sm:ml-2">{product.type}</span>
                         </div>
                       </td>
                     </tr>

@@ -154,7 +154,7 @@ const AboutUs = () => {
       {/* Features Section */}
       <section
         id="features"
-        className="min-h-screen py-16 md:py-24 px-4 bg-white"
+        className="min-h-screen py-16 md:py-6 px-4 bg-white"
         ref={featuresRef}
       >
         <div className="container mx-auto">
