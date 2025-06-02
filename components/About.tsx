@@ -123,7 +123,7 @@ const AboutUs = () => {
               }`}
               style={{ transitionDelay: "400ms" }}
             >
-              <div className="space-y-6">
+              <div className="space-y-6 text-center">
                 <p className="text-lg text-[black] leading-relaxed">
                   RareBee Lifesciences is a PCD Pharma company based in
                   Ahmedabad, Gujarat. We have a clear vision of becoming a
@@ -154,7 +154,7 @@ const AboutUs = () => {
       {/* Features Section */}
       <section
         id="features"
-        className="min-h-screen py-16 md:py-6 px-4 bg-white"
+        className="min-h-screen py-16 md:py-24 px-4 bg-white"
         ref={featuresRef}
       >
         <div className="container mx-auto">
